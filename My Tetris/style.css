@@ -1,0 +1,379 @@
+/* =======================================================
+   1. RESET BỘ KHUNG CƠ BẢN
+   ======================================================= */
+body {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    background-color: #1a1a1a;
+    overflow: hidden; 
+}
+
+.menu-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.man-hinh-menu-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    z-index: 0; 
+    image-rendering: pixelated;
+}
+
+.chu-tetris-icon {
+    position: absolute;
+    z-index: 1;
+    top: 15%;         
+    left: 50%;        
+    transform: translateX(-50%); 
+    width: 380px;     
+    height: auto;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.menu-buttons {
+    position: absolute;
+    z-index: 1;
+    top: 42%;         
+    left: 50%;        
+    transform: translateX(-50%); 
+    display: flex;
+    flex-direction: column;
+    gap: 14px;        
+    width: 200px;     
+}
+
+.btn {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.btn:active { transform: scale(0.95); }
+
+.start-4-icon, .load-4-icon, .options-4-icon, .exist-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+}
+
+/* =======================================================
+   BẢNG OPTION SETTING POPUP
+   ======================================================= */
+.setting-popup-overlay {
+    position: fixed; 
+    top: 0; left: 0; width: 100vw; height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 9999; 
+    display: flex; align-items: center; justify-content: center;  
+}
+
+.setting-board-container {
+    position: relative; 
+    width: 236px; height: 199px;
+    transform: scale(1.0); 
+    transform-origin: center center;
+}
+
+.options-menuscreen-child {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #d9d9d9; border-radius: 10px; border: 2px solid #5CA2E0; z-index: 0;
+}
+
+.options-menuscreen-inner, .bang-rules-4-parent {
+    position: absolute; top: 0; left: 0; width: 236px; height: 199px; z-index: 1;
+}
+
+.bang-rules-1, .bang-rules-2, .bang-rules-3, .bang-rules-4, .bang-rules-5 {
+    position: absolute; width: 100%; right: 0; left: 0; max-width: 100%; overflow: hidden; image-rendering: pixelated;
+}
+.bang-rules-1 { top: 0; height: 73.9px; object-fit: cover; }
+.bang-rules-2 { top: 67px; height: 52px; object-fit: cover; }
+.bang-rules-5 { top: 82px; height: 52px; object-fit: cover; }
+.bang-rules-3 { top: 126px; height: 51.9px; object-fit: cover; }
+.bang-rules-4 { top: 165px; height: 74px; object-fit: contain; }
+
+.setting {
+    position: absolute; top: 29px; left: 10px; width: 214px; height: 35px;
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+    z-index: 2; color: #000; font-family: 'Pixelify Sans', sans-serif; font-size: 30px; text-align: center;
+}
+
+.sound { position: absolute; top: 93px; left: 62px; font-size: 20px; z-index: 2; font-family: 'Pixelify Sans', sans-serif; color: #000; }
+.music { position: absolute; top: 90px; left: 138px; width: 30px; height: 30px; z-index: 2; cursor: pointer; }
+.music-icon { width: 100%; height: 100%; image-rendering: pixelated; }
+
+.setting-board-container .chu-thau-1 { position: absolute; top: 155px; left: 30px; width: 63px; height: 44px; object-fit: cover; z-index: 2; image-rendering: pixelated; }
+.setting-board-container .chu-thau-2 { position: absolute; top: 155px; left: 154px; width: 63px; height: 44px; object-fit: cover; z-index: 2; image-rendering: pixelated; }
+.backbutton { position: absolute; top: 157px; left: 104px; width: 39px; height: 39px; z-index: 3; cursor: pointer; }
+
+/* =======================================================
+   MÀN HÌNH LỊCH SỬ CHƠI (HISTORY RECORDS)
+   ======================================================= */
+.load-history-score-screen {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; display: flex;
+}
+.history-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1;
+}
+.ong-chu-click-me {
+    position: absolute; left: 0; top: 0; width: 42%; height: 100%; z-index: 4; display: flex; align-items: flex-end; justify-content: center;
+}
+.ong-chu { position: relative; display: flex; flex-direction: column; align-items: center; cursor: pointer; width: 100%; }
+.snapedit-1779043254759-1-icon { width: 85%; max-width: 420px; height: auto; image-rendering: pixelated; display: block; }
+
+.click-me {
+    color: #FFD700; font-family: 'Pixelify Sans', sans-serif; font-size: 20px; text-shadow: 2px 2px 0 #000; margin-bottom: 12px;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.history-title-img { position: absolute; top: 5%; right: 5%; height: 60px; width: auto; image-rendering: pixelated; z-index: 4; filter: drop-shadow(2px 2px 0 #000); }
+.history-slots-container { position: absolute; top: 20%; left: 44%; right: 4%; display: flex; flex-direction: column; gap: 18px; z-index: 4; }
+
+.history-slot {
+    background-color: rgba(0, 0, 0, 0.65); border: 3px solid #5CA2E0; border-radius: 8px; padding: 12px 18px;
+    color: white; font-family: 'Pixelify Sans', sans-serif; display: flex; justify-content: space-between; align-items: center; text-shadow: 1px 1px 0 #000;
+}
+.slot-rank { font-size: 24px; color: #FFD700; font-weight: bold; }
+.slot-score { font-size: 20px; color: #4CAF50; }
+.slot-details { font-size: 16px; color: #FFF; text-align: right; }
+
+#closeHistoryBtn { position: absolute !important; bottom: 25px !important; left: 25px !important; z-index: 4; cursor: pointer; }
+#closeHistoryBtn .back-1-icon { width: 55px !important; height: auto; image-rendering: pixelated; }
+
+/* =======================================================
+   4. MÀN HÌNH CHƠI GAME CHÍNH (GAMEPLAY SCREEN)
+   ======================================================= */
+.gameplayscreen {
+    position: fixed; 
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: #1a1a1a; z-index: 5; 
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+
+/* Yêu cầu 1 & Yêu cầu 7: Tăng chiều cao lên 530px và hạ scale gốc xuống 1.0 */
+.gameplay-board-container {
+    position: relative; 
+    width: 668px;   
+    height: 530px;  
+    transform: scale(1.3); 
+    transform-origin: center center;
+}
+
+.man-hinh-choi-chinh-1 {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: fill; image-rendering: pixelated; z-index: 0;
+}
+
+/* Yêu cầu 1: Căn trung tâm và xóa bỏ hoàn toàn scale gò bó */
+.game-board-container {
+    position: absolute;
+    top: 0px;        
+    left: calc(50% - 175px);      
+    width: 350px;     
+    height: 525px;    
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.55); 
+    border: 3px solid #5CA2E0; 
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: none; 
+}
+
+/* Yêu cầu 6: Ép cứng pixel vẽ của canvas để tránh lỗi mờ lưới */
+#gameCanvas { 
+    display: block; 
+    width: 350px; 
+    height: 525px; 
+    image-rendering: pixelated; 
+}
+
+/* Yêu cầu 2: Căn chỉnh Panel trái sát biên (left: 10px) */
+.gameplayscreen-inner { position: absolute; top: 33px; left: 10px; border-radius: 10px; background-color: #d9d9d9; width: 136px; height: 122px; opacity: 0.7; z-index: 1; }
+.line-div { position: absolute; top: 94px; left: 10px; border-top: 1px solid #000; width: 136px; height: 1px; z-index: 2; }
+.level-0, .score-0 { position: absolute; left: 10px; width: 136px; text-align: center; font-family: 'Pixelify Sans', sans-serif; font-size: 18px; color: #000; z-index: 2; }
+.level-0 { top: 40px; }
+.score-0 { top: 95px; }
+
+/* Yêu cầu 3: Căn chỉnh Panel phải sát biên (left: 522px) */
+.rectangle-div { position: absolute; top: 33px; left: 522px; border-radius: 10px; background-color: #d9d9d9; width: 115px; height: 122px; opacity: 0.7; z-index: 1; }
+.gameplayscreen-child2 { position: absolute; top: 78px; left: 522px; border-top: 1px solid #000; width: 115px; height: 1px; z-index: 2; }
+.next { position: absolute; left: 522px; top: 40px; width: 115px; text-align: center; font-family: 'Pixelify Sans', sans-serif; font-size: 18px; color: #000; z-index: 2; }
+
+/* Hiệu ứng mờ/rõ hover thủ công bằng CSS cho 3 nút */
+.home, .settings-btn-container, .pause-btn-container {
+    opacity: 0.65;
+    transition: all 0.2s ease-in-out;
+}
+.home:hover, .settings-btn-container:hover, .pause-btn-container:hover {
+    opacity: 1;
+    transform: scale(1.12);
+}
+.home:active, .settings-btn-container:active, .pause-btn-container:active {
+    transform: scale(0.9);
+}
+
+/* Yêu cầu 3: Đưa cụm nút lên góc trên bên phải theo chuẩn Figma pixel */
+.pause-icon-img, .settings-icon-img, .home-icon { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+
+.pause-btn-container { position: absolute; top: 200px; right: 35px; width: 28px; height: 28px; z-index: 10; cursor: pointer; }
+.settings-btn-container { position: absolute; top: 200px; right: 68px; width: 28px; height: 28px; z-index: 10; cursor: pointer; }
+.home { position: absolute; top: 200px; right: 106px; width: 28px; height: 28px; z-index: 10; cursor: pointer; }
+
+/* OVERLAYS POPUPS */
+.pause-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.pause-box { text-align: center; }
+.resume-btn { cursor: pointer; display: inline-block; }
+
+/* Yêu cầu 7: Bảng Game Over Overlay sử dụng Flexbox căn tâm */
+.gameover-overlay {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 9999;
+    display: flex;           
+    align-items: center;
+    justify-content: center;
+}
+
+/* =======================================================
+   BỐ CỤC KHUNG ĐIỂM (BẢNG TRÁI & PHẢI) SỬ DỤNG BANGDIEM.PNG
+   ======================================================= */
+.info-panel {
+    position: absolute;
+    width: 135px;    /* Chiều rộng khung ảnh */
+    height: 160px;   /* Chiều cao khung ảnh */
+    z-index: 5;
+}
+
+.info-panel.left-panel {
+    top: 35px;
+    left: 10px;
+}
+
+.info-panel.right-panel {
+    top: 35px;
+    right: 15px; /* Căn lề phải tự động, không lo màn hình to nhỏ */
+}
+
+.panel-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    image-rendering: pixelated;
+    z-index: 1;
+}
+
+/* Chữ tiêu đề nằm gọn trong thanh màu vàng */
+.panel-title {
+    position: absolute;
+    top: 30px; 
+    width: 100%;
+    text-align: center;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Vùng hiển thị thông số lọt lòng khu vực màu trắng/xám */
+.panel-body {
+    position: absolute;
+    top: 55px; 
+    width: 100%;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 18px;
+    color: #000;
+    z-index: 2;
+}
+
+#nextCanvas {
+    image-rendering: pixelated;
+}
+
+
+/* =======================================================
+   SỬA LỖI MỜ CHỮ MÀN HÌNH GAME OVER
+   ======================================================= */
+.gameover-board-container .rectangle-div {
+    position: absolute; top: 0; left: 0;
+    border-radius: 10px; 
+    background-color: #d9d9d9;
+    width: 100%; height: 100%; 
+    border: 4px solid #5CA2E0; 
+    opacity: 1 !important; /* Ép cứng không cho nền bị mờ trong suốt */
+}
+
+.gameover-board-container .game-over {
+    position: absolute; top: 30px; left: 0; width: 100%;
+    font-size: 38px; text-align: center; font-weight: bold;
+    color: #ff4d4d; /* Màu đỏ sáng hơn */
+    /* Tạo viền đen bao quanh chữ (Outline) siêu đậm để chữ nhảy ra khỏi nền */
+    text-shadow: 3px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 5px 5px 0px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+/* Khối định dạng chung của chữ (Giữ nguyên của bạn) */
+.gameover-board-container .final-score-0, 
+.gameover-board-container .level-02 {
+    position: absolute; left: 0; width: 100%; display: inline-block;
+    font-size: 22px; text-align: center; font-weight: bold; 
+    color: #fff; 
+    text-shadow: 2px 2px 0 #000, -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000;
+    z-index: 10;
+}
+
+/* THÊM 2 ĐOẠN NÀY ĐỂ TÁCH VỊ TRÍ 2 DÒNG RA */
+.gameover-board-container .final-score-0 {
+    top: 95px;  /* Đẩy dòng Điểm số xuống một chút so với chữ GAME OVER */
+}
+
+.gameover-board-container .level-02 {
+    top: 135px; /* Đẩy dòng Level nằm ngay bên dưới dòng Điểm số */
+}
+
+.gameover-board-container .chu-thau-1 { position: absolute; bottom: 15px; left: 20px; width: 63px; height: 44px; object-fit: cover; image-rendering: pixelated; }
+.gameover-board-container .chu-thau-2 { position: absolute; bottom: 15px; right: 20px; width: 63px; height: 44px; object-fit: cover; image-rendering: pixelated; }
+.gameover-home-btn { position: absolute; bottom: 18px; left: calc(50% - 16px); width: 32px; height: 32px; cursor: pointer; z-index: 10; }
+
+/* =======================================================
+   HIỆU ỨNG EASTER EGG (RUNG LẮC)
+   ======================================================= */
+@keyframes shake-uncle {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-2deg); }
+    20% { transform: translate(-3px, 0px) rotate(2deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(2deg); }
+    50% { transform: translate(-1px, 2px) rotate(-2deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-2deg); }
+    80% { transform: translate(-1px, -1px) rotate(2deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.shake-animation {
+    animation: shake-uncle 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}

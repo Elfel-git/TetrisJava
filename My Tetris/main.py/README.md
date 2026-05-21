@@ -5,7 +5,7 @@
 - Thành viên:  
     Nguyễn Ngọc Linh - trưởng nhóm   
     Võ Trọng Kiên   
-    Nguyễn Phan Kiều My  
+    Võ Phan Kiều My  
     La Duy Khải  
     Nguyễn Minh Khuê  
 

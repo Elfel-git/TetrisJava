@@ -98,22 +98,22 @@ MUSIC_VOLUME = 0.5
 #  4. [HÀM ĐỂ CHÈN HÌNH] ĐƯỜNG DẪN TÀI NGUYÊN HÌNH ẢNH
 #  (Để None nếu chưa có ảnh -> Hệ thống tự vẽ hộp màu dự phòng theo kích thước trên)
 # =====================================================================
-BG_PATH          = "My Tetris/assets/city.png"   
-SCORE_FRAME_PATH = None   
+BG_PATH          = "My Tetris/assets/images/man-hinh-menu-1.png"   
+SCORE_FRAME_PATH = "My Tetris/assets/bangdiem.png"  
 NEXT_FRAME_PATH  = None   
 LEVEL_FRAME_PATH = None   
 
 PAUSE_ICON_PATH   = "My Tetris/assets/button/pauseicon.png"  
-SETTING_ICON_PATH = None  
+SETTING_ICON_PATH = "My Tetris/assets/images/setting.png"  
 LOSE_FRAME_PATH   = None  
 SETTING_FRAME_PATH= None  
 
 # Ảnh trạng thái nút bấm trong các bảng Pop-up
-PLAY_BTN_PATH     = None  
-BACK_BTN_PATH     = None  
-SOUND_ON_PATH     = None  
-SOUND_OFF_PATH    = None  
-EXIT_BTN_PATH     = None  
+PLAY_BTN_PATH     = "My Tetris/assets/images/play.png"  
+BACK_BTN_PATH     = "My Tetris/assets/images/back.png"  
+SOUND_ON_PATH     = "My Tetris/assets/images/music.png"  
+SOUND_OFF_PATH    = None 
+EXIT_BTN_PATH     = "My Tetris/assets/images/back-1.png"  
 
 # --- [MỚI] ĐƯỜNG DẪN ẢNH SPRITE CHO 4 NÚT MÀN HÌNH CHÍNH (Default và Pressed/Hover) ---
 MENU_START_DEFAULT_PATH = "My Tetris/assets/button/start.png"   # Ví dụ: "My Tetris/assets/menu/start_default.png"

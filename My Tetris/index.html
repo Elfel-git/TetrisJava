@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Building - Main Menu</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <div class="menu-screen">
+        
+        <img class="man-hinh-menu-1" src="./assets/images/man-hinh-menu-1.png" alt="Background">
+
+        <div id="mainMenuContent">
+            <img class="chu-tetris-icon" src="./assets/images/chu-tetris.png" alt="Tetris Title">
+            
+            <div class="menu-buttons">
+                <div class="start btn" id="startContainer">
+                    <img class="start-4-icon" src="./assets/images/start-4.png" alt="Play Game">
+                </div>
+                <div class="load btn" id="loadContainer">
+                    <img class="load-4-icon" src="./assets/images/load-4.png" alt="Load History">
+                </div>
+                <div class="options btn" id="optionsContainer">
+                    <img class="options-4-icon" src="./assets/images/options-4.png" alt="Options">
+                </div>
+                <div class="exit btn" id="exitContainer">
+                    <img class="exist-icon" src="./assets/images/exit-1.png" alt="Exit Game">
+                </div>
+            </div>
+        </div>
+
+        <div id="historyScreenContent" class="load-history-score-screen" style="display: none;">
+            <div class="history-overlay"></div>
+
+            <img class="history-title-img" src="./assets/images/h-istory.png" alt="HISTORY">
+
+            <div class="ong-chu-click-me">
+                <div class="ong-chu" id="ongChuContainer">
+                    <img class="snapedit-1779043254759-1-icon" src="./assets/images/snapedit-17790432547591.png" alt="ong chu tho xay">
+                    <div class="click-me">CLICK ME</div>
+                </div>
+            </div>
+
+            <div class="history-slots-container" id="historySlotsContainer"></div>
+                
+            <div class="backbutton" id="closeHistoryBtn">
+                <img class="back-1-icon" src="./assets/images/back-1.png" alt="Back">
+            </div>
+        </div>
+
+        <div id="gameScreenContent" class="gameplayscreen" style="display: none;">
+            <div class="gameplay-board-container">
+                    
+                <img class="man-hinh-choi-chinh-1" src="./assets/images/man-hinh-choi-chinh-1.png" alt="BG">
+                    
+                <div class="info-panel left-panel">
+                    <img class="panel-bg" src="./assets/bangdiem.png" alt="Frame">
+                    <div class="panel-title">STATS</div>
+                    <div class="panel-body">
+                        <div id="levelDisplay">Level: 1</div>
+                        <div id="scoreDisplay">Score: 0</div>
+                    </div>
+                </div>
+
+                <div class="info-panel right-panel">
+                    <img class="panel-bg" src="./assets/bangdiem.png" alt="Frame">
+                    <div class="panel-title">NEXT</div>
+                    <div class="panel-body">
+                        <canvas id="nextCanvas" width="90" height="70"></canvas>
+                    </div>
+                </div>
+
+                <div class="game-board-container">
+                    <canvas id="gameCanvas" width="350" height="525"></canvas>
+                </div>
+
+                <div class="home" id="homeBtn">
+                    <img class="home-icon" src="./assets/images/home.png" alt="Home">
+                </div>
+                <div class="settings-btn-container" id="inGameSettingsBtn">
+                    <img class="settings-icon-img" src="./assets/images/settings.png" alt="Settings">
+                </div>
+                <div class="pause-btn-container" id="pauseBtn">
+                    <img class="pause-icon-img" src="./assets/images/pause.png" alt="Pause">
+                </div>
+
+                <div id="gameOverOverlay" class="gameover-overlay" style="display: none;">
+                    <div class="gameover-board-container">
+                        <div class="rectangle-div"></div>
+                        <div class="game-over">GAME OVER</div>
+                        <div class="final-score-0" id="finalScoreDisplay">Final score: 0</div>
+                        <div class="level-02" id="finalLevelDisplay">Level: 1</div>
+                        <img class="chu-thau-1" src="./assets/images/chu-thau-1.png">
+                        <img class="chu-thau-2" src="./assets/images/chu-thau-2.png">
+                        <div class="gameover-home-btn" id="gameOverHomeBtn">
+                            <img src="./assets/images/home.png" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pauseOverlay" class="pause-overlay" style="display: none;">
+                    <div class="pause-box">
+                        <h2 style="color: white; font-family: 'Pixelify Sans', sans-serif; font-size: 40px; margin-bottom: 20px;">PAUSED</h2>
+                        <div id="resumeBtn" class="resume-btn">
+                            <img src="./assets/images/play.png" alt="Resume" style="width: 60px;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="settingPopupGroup" class="setting-popup-overlay" style="display: none;">
+            <div class="setting-board-container">
+                <div class="options-menuscreen-child"></div>
+                <div class="options-menuscreen-inner">
+                    <div class="bang-rules-4-parent">
+                        <img class="bang-rules-4" src="./assets/images/bang-rules-4.png">
+                        <img class="bang-rules-3" src="./assets/images/bang-rules-3.png">
+                        <img class="bang-rules-1" src="./assets/images/bang-rules-1.png">
+                        <img class="bang-rules-2" src="./assets/images/bang-rules-2.png">
+                        <img class="bang-rules-5" src="./assets/images/bang-rules-5.png">
+                        <div class="component-child"></div>
+                    </div>
+                </div>
+                <div class="setting">Setting</div>
+                <div class="sound">Sound:</div>
+                <div class="music" id="musicToggleBtn">
+                    <img class="music-icon" src="./assets/images/music.png">
+                </div>
+                <img class="chu-thau-1" src="./assets/images/chu-thau-1.png">
+                <img class="chu-thau-2" src="./assets/images/chu-thau-2.png">
+                <div class="backbutton" id="closeOptionsBtn">
+                    <img class="back-1-icon" src="./assets/images/back-1.png">
+                </div>
+            </div>
+        </div>
+
+    </div> 
+
+    <script src="./game.js"></script>
+    <script>
+
+        // --- 1. Mở / Đóng bảng Setting ---
+        document.getElementById("optionsContainer").addEventListener("click", () => {
+            settingPopupGroup.style.display = "flex";
+        });
+        document.getElementById("closeOptionsBtn").addEventListener("click", () => {
+            settingPopupGroup.style.display = "none";
+        });
+
+        // --- 2. Mở / Đóng màn hình Lịch sử (History) ---
+        document.getElementById("loadContainer").addEventListener("click", () => {
+            mainMenuContent.style.display = "none";
+            historyScreenContent.style.display = "flex";
+            if (typeof renderHistory === "function") {
+                renderHistory(); 
+            }
+        });
+        document.getElementById("closeHistoryBtn").addEventListener("click", () => {
+            historyScreenContent.style.display = "none";
+            mainMenuContent.style.display = "block";
+        });
+
+        // --- 3. Yêu cầu 1: Sửa sang display "flex" khi nhấn START GAME ---
+        document.getElementById("startContainer").addEventListener("click", () => {
+            mainMenuContent.style.display = "none";
+            gameScreenContent.style.display = "flex";
+            if (typeof startGameSession === "function") {
+                startGameSession();
+            }
+        });
+
+        // Bấm Home trong game -> Trở về Menu chính
+        document.getElementById("homeBtn").addEventListener("click", () => {
+            gameScreenContent.style.display = "none";
+            mainMenuContent.style.display = "block";
+            if (typeof stopGameSession === "function") {
+                stopGameSession();
+            }
+        });
+
+        // Yêu cầu 2: Thêm listener xử lý nút Home trên bảng Game Over quay về sảnh
+        document.getElementById("gameOverHomeBtn").addEventListener("click", () => {
+            gameOverOverlay.style.display = "none";
+            gameScreenContent.style.display = "none";
+            mainMenuContent.style.display = "block";
+            if (typeof stopGameSession === "function") {
+                stopGameSession();
+            }
+        });
+
+        // Bấm Play khi đang Pause -> Tiếp tục chơi
+        document.getElementById("resumeBtn").addEventListener("click", () => {
+            pauseOverlay.style.display = "none";
+            if (typeof resumeGameSession === "function") {
+                resumeGameSession();
+            }
+        });
+
+        // Bấm Pause -> Hiển thị overlay Pause
+        document.getElementById("pauseBtn").addEventListener("click", () => {
+            pauseOverlay.style.display = "flex";
+            if (typeof pauseGameSession === "function") {
+                pauseGameSession();
+            }
+        });
+
+        // Bấm settings trong game -> Hiển thị bảng Setting
+        document.getElementById("inGameSettingsBtn").addEventListener("click", () => {
+            settingPopupGroup.style.display = "flex";
+        });
+
+        // --- 4. XỬ LÝ NÚT EXIT GAME (THOÁT GAME) ---
+        document.getElementById("exitContainer").addEventListener("click", () => {
+            const confirmExit = confirm("Bạn có chắc chắn muốn nghiệm thu công trường và thoát game không?");
+            if (confirmExit) {
+                // Lệnh 1: Thử đóng tab trình duyệt ngay lập tức
+                window.close();
+                
+                // Lệnh 2 (Phương án dự phòng): Nếu trình duyệt chặn window.close(), 
+                // chúng ta dọn sạch màn hình và hiển thị giao diện Thank You cực chất.
+                document.body.innerHTML = `
+                    <div style="
+                        display: flex; 
+                        flex-direction: column;
+                        align-items: center; 
+                        justify-content: center; 
+                        width: 100vw; 
+                        height: 100vh; 
+                        background-color: #1a1a1a; 
+                        color: #fff; 
+                        font-family: 'Pixelify Sans', sans-serif;
+                        text-align: center;
+                    ">
+                        <h1 style="font-size: 42px; color: #FFD700; text-shadow: 3px 3px 0 #000; margin-bottom: 10px;">
+                            THANK YOU FOR PLAYING!
+                        </h1>
+                        <p style="font-size: 20px; color: #5CA2E0; text-shadow: 1px 1px 0 #000;">
+                            Hẹn gặp lại bạn tại công trường Tetris Building!
+                        </p>
+                        <p style="font-size: 14px; color: #555; margin-top: 40px;">
+                            (Bây giờ bạn có thể đóng tab trình duyệt này một cách an toàn)
+                        </p>
+                    </div>
+                `;
+            }
+        });
+
+        // Cấu hình Hover Variant ngoài sảnh chờ Menu
+        const hoverVariants = {
+            "startContainer": { imgClass: ".start-4-icon", normalSrc: "./assets/images/start-4.png", hoverSrc: "./assets/images/start-3.png" },
+            "loadContainer": { imgClass: ".load-4-icon", normalSrc: "./assets/images/load-4.png", hoverSrc: "./assets/images/load-3.png" },
+            "optionsContainer": { imgClass: ".options-4-icon", normalSrc: "./assets/images/options-4.png", hoverSrc: "./assets/images/options-3.png" },
+            "closeOptionsBtn": { imgClass: ".back-1-icon", normalSrc: "./assets/images/back-1.png", hoverSrc: "./assets/images/back-2.png" },
+            "exitContainer": { imgClass: ".exist-icon", normalSrc: "./assets/images/exit-1.png", hoverSrc: "./assets/images/exit-3.png" }
+        };
+
+        Object.keys(hoverVariants).forEach(containerId => {
+            const container = document.getElementById(containerId);
+            const config = hoverVariants[containerId];
+            if (container) {
+                const imgElement = container.querySelector(config.imgClass);
+                if (imgElement) {
+                    container.addEventListener("mouseenter", () => imgElement.src = config.hoverSrc);
+                    container.addEventListener("mouseleave", () => imgElement.src = config.normalSrc);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

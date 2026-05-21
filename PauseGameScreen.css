@@ -1,0 +1,252 @@
+.pausescreen {
+  	width: 100%;
+  	height: 376px;
+  	position: relative;
+  	background-color: #fff;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 20px;
+  	color: #000;
+  	font-family: 'Pixelify Sans';
+}
+.man-hinh-choi-chinh-1 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 668px;
+  	height: 448px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.pausescreen-child {
+  	position: absolute;
+  	top: 48px;
+  	left: 227px;
+  	border-radius: 10px;
+  	background-color: #d9d9d9;
+  	width: 215px;
+  	height: 279px;
+  	opacity: 0.5;
+  	flex-shrink: 0;
+}
+.pausescreen-item {
+  	position: absolute;
+  	top: 33px;
+  	left: 32px;
+  	border-radius: 10px;
+  	background-color: #d9d9d9;
+  	width: 151px;
+  	height: 24px;
+  	flex-shrink: 0;
+}
+.level-0 {
+  	position: absolute;
+  	top: 33px;
+  	left: 65px;
+  	display: inline-block;
+  	width: 82px;
+  	height: 22px;
+  	flex-shrink: 0;
+}
+.pausescreen-inner {
+  	position: absolute;
+  	top: 163px;
+  	left: 38px;
+  	border-radius: 10px;
+  	background-color: #d9d9d9;
+  	width: 136px;
+  	height: 122px;
+  	opacity: 0.7;
+  	flex-shrink: 0;
+}
+.rectangle-div {
+  	position: absolute;
+  	top: 181px;
+  	left: 495px;
+  	border-radius: 10px;
+  	background-color: #d9d9d9;
+  	width: 114px;
+  	height: 85px;
+  	opacity: 0.7;
+  	flex-shrink: 0;
+}
+.score-0 {
+  	position: absolute;
+  	top: 163px;
+  	left: 65px;
+  	display: inline-block;
+  	width: 82px;
+  	height: 22px;
+  	flex-shrink: 0;
+}
+.next {
+  	position: absolute;
+  	top: 181px;
+  	left: 532px;
+  	display: inline-block;
+  	width: 48px;
+  	height: 22px;
+  	flex-shrink: 0;
+}
+.gach01-1-icon {
+  	position: absolute;
+  	top: 295px;
+  	left: 227px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-2-icon {
+  	position: absolute;
+  	top: 263px;
+  	left: 259px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-3-icon {
+  	position: absolute;
+  	top: 231px;
+  	left: 291px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-4-icon {
+  	position: absolute;
+  	top: 199px;
+  	left: 323px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-5-icon {
+  	position: absolute;
+  	top: 167px;
+  	left: 355px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-6-icon {
+  	position: absolute;
+  	top: 135px;
+  	left: 387px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-7-icon {
+  	position: absolute;
+  	top: 103px;
+  	left: 387px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.gach01-8-icon {
+  	position: absolute;
+  	top: 71px;
+  	left: 387px;
+  	width: 32px;
+  	height: 32px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.pause-icon {
+  	position: absolute;
+  	top: calc(50% - 57px);
+  	left: calc(50% - 57px);
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	border-radius: 10px;
+  	width: 113px;
+  	height: 113px;
+  	flex-shrink: 0;
+}
+.line-div {
+  	position: absolute;
+  	top: 187.5px;
+  	left: 37.5px;
+  	border-top: 1px solid #000;
+  	box-sizing: border-box;
+  	width: 136px;
+  	height: 1px;
+  	flex-shrink: 0;
+}
+.pausescreen-child2 {
+  	position: absolute;
+  	top: 202.5px;
+  	left: 495.5px;
+  	border-top: 1px solid #000;
+  	box-sizing: border-box;
+  	width: 114px;
+  	height: 1px;
+  	flex-shrink: 0;
+}
+.home {
+  	position: absolute;
+  	top: 28px;
+  	left: 603px;
+  	width: 33px;
+  	height: 33px;
+  	flex-shrink: 0;
+}
+.home2 {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	overflow: hidden;
+}
+.icon {
+  	position: absolute;
+  	height: 83.33%;
+  	width: 75.15%;
+  	top: 8.33%;
+  	right: 12.35%;
+  	bottom: 8.33%;
+  	left: 12.5%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.settings-icon {
+  	position: absolute;
+  	top: 28px;
+  	left: 562px;
+  	width: 33px;
+  	height: 33px;
+  	cursor: pointer;
+  	flex-shrink: 0;
+}
+.play {
+  	position: absolute;
+  	top: 27px;
+  	left: 523px;
+  	width: 33px;
+  	height: 35px;
+  	flex-shrink: 0;
+}
+.icon2 {
+  	position: absolute;
+  	height: 75.14%;
+  	width: 58.48%;
+  	top: 12.5%;
+  	right: 20.68%;
+  	bottom: 12.36%;
+  	left: 20.83%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+
